@@ -1,0 +1,203 @@
+Got it — restarting. Below is a single, **paste-ready Replit-AI prompt** that describes *exactly* how I want the full Lumio website built: style, pages, interactions, animations, tech stack, assets, sample copy, SEO, and deliverables. Paste this into Replit AI (or any creative/dev assistant) and it will understand the full scope and produce code, assets, or a design system for you.
+
+---
+
+# Paste-ready Replit AI Prompt — **Build Lumio: full website (React + Tailwind + Framer Motion)**
+
+**Project name:** Lumio — playful streetwear hoodie storefront
+
+**Short summary / elevator pitch (one line):**
+Build a bright, playful, Olliepop-inspired ecommerce website for Lumio — a hoodie brand that’s bold, photogenic, and full of joyful micro-animations. The site must be optimized for conversion and mobile-first.
+
+---
+
+## Goals & priorities
+
+1. Launch a complete storefront that includes: Home, Shop, Product, Lookbook, About, Sizing, FAQ, Contact, Cart, and Legal pages.
+2. Make the experience *fun, tactile, and highly animated* while preserving accessibility and performance.
+3. Provide code deliverables in **React + Tailwind + Framer Motion** (also include optional Shopify Liquid snippets).
+4. Provide all copy, image prompts, asset list, and a production-ready folder structure.
+
+---
+
+## Audience
+
+* Age: 16–28, streetwear-savvy, social-first, loves bold visuals and shareable product shots.
+
+---
+
+## Visual style & brand direction
+
+* **Vibe:** Olliepop-like — bubbly shapes, glossy highlights, sticker-style icons, bold gradients. Playful but premium.
+* **Palette:** Citrus yellow `#FFD54A`, Berry magenta `#FF5A9E`, Deep charcoal `#0F1115`, Lavender `#D6C7FF`, Cream `#FFF8F2`. Use neon accents sparingly for CTAs and rim lighting.
+* **Typography:** Headline — rounded geometric (Poppins / Inter Rounded). Body — Inter (regular). Large friendly headings.
+* **Imagery:** Photorealistic product photos + editorial hero shots (3 models back-facing on rooftop). Use sticker overlays, subtle textures and soft vignettes.
+* **Logo usage:** centered, minimal — provide primary SVG and compact favicon.
+
+---
+
+## Required pages & components (deliverable list)
+
+* Home (hero, featured products, lookbook preview, value bullets, newsletter modal)
+* Shop (collection filters: color, size; 3-column grid desktop, 1-col mobile)
+* Product page (gallery, variants, size picker, price, description, reviews, related products)
+* Lookbook (editorial grid, full-screen modals with shop links)
+* About (brand story + mission, short team note)
+* Sizing guide (visual chart + measurement tips)
+* FAQ, Shipping & Returns, Privacy, Terms
+* Contact (form + email)
+* Floating cart (slideout), sticky nav, sticky checkout CTA on mobile
+* Admin-friendly CMS placeholders for copy & images
+
+---
+
+## Motion & interaction system (be specific — copy/paste ready)
+
+**Global rules**
+
+* Respect `prefers-reduced-motion`.
+* Use spring physics in Framer Motion for bouncy reveals (stiffness 120, damping 14).
+* Micro-interaction timing: 60–90ms (hovers), 300–600ms (entrances), rim sweep 1200–2000ms loop.
+
+**Hero**
+
+* Title types in with subtle wobble (scale 0.98→1.02→1).
+* Three-model image slides up with 0.5s stagger and soft bounce.
+* Neon rim-light sweep over hoodies every 4–6s (very subtle).
+* CTA has breathing glow and micro-jiggle on hover.
+
+**Cards & product tiles**
+
+* Lift on hover (translateY -6px + shadow growth).
+* Color swatch expands (scale + rotate) on click for emphasis.
+* Price badge flips in on hover.
+
+**Add-to-cart**
+
+* Fly-to-cart animation: clone product image → animate to cart with easing, then play confetti Lottie (6 tiny stars).
+* Toast confirms action (slide in bottom-left squishy ease, auto-dismiss 3.5s).
+
+**Page transitions**
+
+* Crossfade + slight slide (0.4s). Use route-based animations with AnimatePresence.
+
+---
+
+## Functionality & UX requirements
+
+* Mobile-first responsive design.
+* Fast load: images lazy-load, use WebP/AVIF, CDN-ready.
+* Accessibility: alt text, keyboard nav, visible focus states, color contrast >=4.5:1 for body text.
+* Cart persistence (localStorage) and basic checkout flow (simulate with Stripe demo or Shopify buy button).
+* Analytics hooks: GA4 + Meta Pixel placeholders.
+* Email capture: Klaviyo / Shopify Email integration with a welcome coupon flow.
+* Provide a simple mock admin JSON file (products, copy, assets) so non-dev can update content.
+
+---
+
+## Content & copy tone
+
+* Playful, confident, slightly irreverent. Short, snappy lines.
+* Hero headline options (choose one):
+
+  * “Light Up Your Day.”
+  * “Wear the Vibe.”
+  * “Glow Up. Go Out.”
+* Product short description template:
+
+  > [Product Name] — heavyweight comfort with a photogenic pop. 350gsm brushed fleece, reinforced seams, true-to-size. Machine wash cold. Free returns.
+
+---
+
+## Image & asset instructions (include generator prompts)
+
+**Hero image prompt (paste-ready):**
+
+> Three young models (two females, one male) standing side-by-side with their backs turned toward the camera, wearing premium streetwear hoodies branded “Lumio”. Urban rooftop at dusk with skyscrapers, soft rim lighting, subtle neon reflections on the hoodies (citrus & berry accents). Photorealistic, ultra-real 8K, shallow depth of field, professional bokeh, fashion editorial composition, no faces visible, no watermark. Negative prompt: blurry, low-res, watermark, faces visible, cartoonish, extra limbs.
+
+**Product photos needed (per product):** front, back, detail stitching, on-model front, on-model back. Provide mobile crops.
+**Other assets:** logo.svg, favicon, 2 short looping hero animations (webm), 12 lookbook images, sticker icons (SVG) for features.
+
+---
+
+## Tech stack & folder structure (explicit)
+
+* React (Vite)
+* Tailwind CSS (JIT)
+* Framer Motion
+* React Router
+* Optional: Stripe (test), Shopify buy SDK (optional)
+* Suggested file layout:
+
+```
+/src
+  /components
+    Nav.jsx, Hero.jsx, ProductCard.jsx, Cart.jsx, Footer.jsx
+  /pages
+    Home.jsx, Shop.jsx, Product.jsx, Lookbook.jsx, About.jsx
+  /data
+    products.json
+  /styles
+    globals.css (Tailwind)
+  App.jsx
+/public
+  /images
+  favicon.ico
+```
+
+---
+
+## Dev deliverables (what to output)
+
+1. Full React app code (components + pages) with Tailwind classes and Framer Motion animations — ready to run.
+2. A `/public/images` placeholder list and 1 hero image prompt + 3 product mock prompts.
+3. Shopify Liquid equivalents for core templates (home, product, collection).
+4. Copy bank (hero lines, product descriptions, email templates, FAQ answers).
+5. README with setup steps, env variables, and deployment steps.
+
+---
+
+## Acceptance criteria (how I will judge success)
+
+* Pages render without console errors.
+* Animations run smoothly and respect reduced-motion.
+* Site is responsive and accessible.
+* All copy is present and editable in `products.json`.
+* Cart flow is demonstrable (add/remove, view, persistent).
+
+---
+
+## Additional constraints / notes
+
+* Keep bundle small, avoid heavy vendor libs except Framer Motion.
+* Provide comments in code for where to swap real payment/analytics keys.
+* Prioritize ease-of-editing for non-devs (use `products.json`).
+
+---
+
+## Example prompt header to paste directly into Replit AI (single block)
+
+Copy everything from here into Replit AI:
+
+```
+Build a full React + Tailwind + Framer Motion website for "Lumio" — a playful streetwear hoodie brand. Requirements:
+- Pages: Home, Shop, Product, Lookbook, About, Sizing, FAQ, Contact, Cart, Legal
+- Visual style: Olliepop-inspired, palette: #FFD54A, #FF5A9E, #0F1115, #D6C7FF, #FFF8F2
+- Motion system: spring physics (stiffness 120, damping 14), micro-interactions 60-90ms, entrances 300-600ms. Respect prefers-reduced-motion.
+- Tech stack: React (Vite), Tailwind CSS, Framer Motion, React Router. Provide optional Shopify Liquid snippets.
+- Deliverables: full source code (components + pages), products.json, image prompts (hero + product), README with setup & deploy instructions, SEO meta tags, and copy bank.
+
+Hero image prompt:
+Three young models (two females, one male) standing side-by-side with their backs turned toward the camera, wearing premium streetwear hoodies branded “Lumio”. Urban rooftop at dusk with skyscrapers, soft rim lighting, subtle neon reflections on the hoodies (citrus & berry accents). Photorealistic, ultra-real 8K, shallow depth of field, professional bokeh, fashion editorial composition, no faces visible, no watermark.
+
+Also return: file tree, Tailwind config, package.json dependencies, and a short deploy checklist.
+```
+
+---
+
+If you want, I’ll now:
+
+* A) Paste this into Replit AI and run it for you (I’ll simulate outputs here), **or**
+* B) Start generating the React + Tailwind code right now based on this brief.
+
+Which do you want me to do next?
